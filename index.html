@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NovaDetail | Mobile Car Detailing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background"></div>
+
+  <header class="nav">
+    <h1 class="logo">NovaDetail</h1>
+    <button class="hamburger" aria-label="Menu">&#9776;</button>
+    <nav id="primary-navigation">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-bg-image"></div>
+    <div class="glass-card">
+      <h2>Your Car. Reimagined.</h2>
+      <p>Futuristic mobile detailing that comes to you — because your car deserves a glow-up.</p>
+      <a href="#contact" class="button-glow">Book Now</a>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <h2>Services & Prices</h2>
+
+    <label for="vehicleType">Vehicle Type:</label>
+    <select id="vehicleType" name="vehicleType">
+      <option value="sedan">Sedan</option>
+      <option value="coupe">Coupe</option>
+      <option value="suv">SUV</option>
+      <option value="pickup">Pick-up Truck</option>
+    </select>
+
+    <div class="grid">
+      <div class="glass-card service-option" data-service="Interior Detailing">
+        <h3>Interior Detailing</h3>
+        <ul>
+          <li>Full vacuuming: seats, carpets, mats, trunk</li>
+          <li>Dashboard, console, and door panel wipe-down</li>
+          <li>Streak-free window and mirror cleaning</li>
+          <li>Cup holders, vents, and buttons</li>
+          <li>Sanitizing</li>
+        </ul>
+        <p class="price">$<span class="price-value">100</span></p>
+      </div>
+
+      <div class="glass-card service-option" data-service="Exterior Wash">
+        <h3>Exterior Wash</h3>
+        <ul>
+          <li>Hand wash with gentle, pH-balanced shampoo</li>
+          <li>Tyre and rim deep cleaning</li>
+          <li>Microfiber towel drying to avoid paint scratches</li>
+          <li>Safe rinse for all paint types</li>
+        </ul>
+        <p class="price">$<span class="price-value">80</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-wrapper glass-card">
+      <button class="testimonial-nav left" aria-label="Previous">&#10094;</button>
+      <div class="testimonial-slider">
+        <div class="testimonial-track">
+          <div class="testimonial"><p>"NovaDetail brought my car back to life! Amazing attention to detail lore."</p><h4>- Jenna T.</h4></div>
+          <div class="testimonial"><p>"Booked them on my lunch break and they came right to my office. Unreal service."</p><h4>- Mike R.</h4></div>
+          <div class="testimonial"><p>"Best detailing I've ever had. My SUV looks factory new."</p><h4>- Priya D.</h4></div>
+          <div class="testimonial"><p>"Super convenient and professional. Highly recommended."</p><h4>- Sam G.</h4></div>
+          <div class="testimonial"><p>"They turned my muddy truck into a showroom piece."</p><h4>- Alicia M.</h4></div>
+          <div class="testimonial"><p>"Insane results. Even cleaned areas I didn't know needed cleaning."</p><h4>- Kevin L.</h4></div>
+        </div>
+      </div>
+      <button class="testimonial-nav right" aria-label="Next">&#10095;</button>
+    </div>
+  </section>
+
+  <div class="contact-info" data-contact></div>
+
+  <section id="about" class="section">
+    <div class="glass-card">
+      <h2>About NovaDetail</h2>
+      <p>
+        NovaDetail is a mobile startup focused on premium detailing with limited services for now — more coming soon. Welcome to [Your Business Name], Barrie’s newest mobile car detailing service — where convenience meets craftsmanship.
+        We’re a passionate startup with a simple mission: to bring high-end detailing directly to your driveway. Whether it’s a quick refresh or a full interior and exterior transformation, we treat every vehicle like it’s our own — with precision, care, and pride.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint saepe modi odio! Debitis assumenda consectetur voluptate placeat voluptatum sint, alias vero nihil. Maxime, recusandae sit dolores iste sint esse accusamus?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit nulla fugiat quam voluptatem molestias ad, excepturi, temporibus similique nemo magnam eum. Architecto animi distinctio excepturi inventore ut maxime.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate autem sed consequatur assumenda! Corporis totam deleniti nemo, beatae unde dolorum?
+      </p>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="glass-card" style="position: relative;">
+      <h2>Contact</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <input type="tel" placeholder="Your Phone Number" required />
+        <textarea id="message" placeholder="Message or Booking Request..." rows="4" required></textarea>
+        <button type="submit" class="button-glow">Send</button>
+      </form>
+      <div id="thankYouPopup">Your request has been submitted!</div>
+    </div>
+  </section>
+
+<footer>
+  <div class="footer-contact">
+    <div class="contact-item">
+      <strong>Email:</strong><br />
+      <a href="mailto:info@novadetail.com">info@novadetail.com</a>
+    </div>
+    <div class="contact-item">
+      <strong>Phone:</strong><br />
+      <a href="tel:+1234567890">+1 (234) 567-890</a>
+    </div>
+    <div class="contact-item">
+      <strong>Location:</strong><br />
+      Barrie, ON
+    </div>
+    <div class="contact-item instagram">
+      <strong>Instagram:</strong><br />
+      <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+        <img src="images/21.avif" alt="Instagram Logo" class="instagram-logo" />
+        @instagram
+      </a>
+    </div>
+  </div>
+  <p>&copy; 2025 NovaDetail. All rights reserved.</p>
+</footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

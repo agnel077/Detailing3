@@ -1,0 +1,512 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Roboto+Slab:wght@400;500&display=swap');
+
+/* ========== Reset & Base ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Slab', serif;
+  background: #0d0d0d;
+  color: #ccc;
+  overflow-x: hidden;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 30% 30%, #1a1a1a, #000);
+  z-index: -2;
+}
+
+/* ========== Navigation ========== */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 20px 8%;
+  background: rgba(10, 10, 10, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 5px solid rgba(212, 175, 55, 0.3);
+  z-index: 20;
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: #D4AF37;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+nav a {
+  font-family: 'Orbitron', sans-serif;
+  color: #ccc;
+  margin-left: 30px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #D4AF37;
+  text-shadow: 0 0 0px #D4AF37;
+}
+
+/* ========== Hero Section ========== */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+  position: relative;
+  background: linear-gradient(160deg, #111, #1e1e1e);
+  overflow: hidden;
+}
+
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  background: url('images/pexels-pixabay-326259.jpg') center/cover no-repeat;
+  opacity: 0.2;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.glass-card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  cursor: auto;
+}
+
+h2 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.4rem;
+  color: #ffcc00;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* ========== Sections & Layout ========== */
+.section {
+  padding: 100px 8% 80px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.service-option {
+  cursor: pointer;
+}
+
+/* Style the service list items */
+#services ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+#services li {
+  position: relative;
+  padding-left: 20px; /* space for star */
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* Gold star as bullet */
+#services li::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  color: #ffcc00;
+  font-size: 0.85rem;
+}
+
+/* Vehicle type dropdown styling */
+.vehicle-type-select {
+  margin: 20px 0 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.vehicle-type-select label {
+  font-family: 'Exo 2', sans-serif;
+  color: #ffcc00;
+  font-weight: 800;
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+#vehicleType {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 2px solid #D4AF37;
+  background-color: #1a1a1a;
+  color: #ffcc00;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  outline: none;
+}
+
+#vehicleType:hover,
+#vehicleType:focus {
+  border-color: #ffcc00;
+  background-color: #2c2c2c;
+  color: #ccc;
+}
+
+.price {
+  margin-top: 15px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #ffcc00;
+}
+
+/* ========== Buttons ========== */
+.button-glow {
+  display: inline-block;
+  padding: 12px 28px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 15px;
+  background: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  box-shadow: 0 0 5px #ffcc0099;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button-glow:hover {
+  background: #e6b800;
+  box-shadow: none;
+}
+
+/* ========== Contact ========== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+  cursor: auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ccc;
+  font-size: 1rem;
+  outline: none;
+  font-family: 'Roboto Slab', serif;
+}
+
+.contact-form ::placeholder {
+  color: #ccc;
+}
+
+/* ========== Thank You Popup ========== */
+#thankYouPopup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at 30% 30%, #1a1a1a, #000);
+  color: #ffcc00;
+  padding: 25px 40px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 0 25px #151515cc;
+  display: none;
+  align-items: center;
+  gap: 12px;
+  z-index: 20;
+  user-select: none;
+  pointer-events: none;
+  justify-content: center;
+  text-align: center;
+  white-space: nowrap;
+  font-family: 'Exo 2', sans-serif;
+}
+
+#thankYouPopup::before {
+  content: "\2714";
+  font-size: 1.5rem;
+  margin-right: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #ccc;
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1;
+  user-select: none;
+}
+
+/* ========== Testimonial ========== */
+#testimonials {
+  padding: 60px 8% 80px;
+  text-align: center;
+}
+
+.testimonial-wrapper {
+  position: relative;
+  overflow: hidden;
+  padding: 20px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+}
+
+.testimonial {
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  background: none;
+  border-radius: 12px;
+  color: #ccc;
+  font-style: italic;
+  min-height: 140px;
+}
+
+.testimonial p {
+  margin-bottom: 10px;
+}
+
+.testimonial h4 {
+  font-family: 'Exo 2', sans-serif;
+  font-style: normal;
+  font-size: 0.95rem;
+  color: #ffcc00;
+}
+
+/* Arrows */
+.testimonial-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  color: #ccc;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 5px 12px;
+  user-select: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.testimonial-nav.left {
+  left: 10px;
+}
+
+.testimonial-nav.right {
+  right: 10px;
+}
+
+.testimonial-nav:hover {
+  color: #818179;
+  transform: translateY(-50%) scale(1.2);
+}
+
+/* ========== Contact Snippet ========== */
+.contact-snippet {
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.contact-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.contact-item {
+  min-width: 150px;
+  color: #ffcc00;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.contact-item strong {
+  color: #ccc;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 600;
+}
+
+.contact-item a {
+  color: #ffcc00;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* ========== Footer ========== */
+footer {
+  text-align: center;
+  padding: 40px 8%;
+  color: #777;
+  border-top: 5px solid rgba(212, 175, 55, 0.3);
+  font-size: 0.9rem;
+  background: radial-gradient(circle at 30% 30%, #1a1a1a, #000);
+  font-family: 'Roboto Slab', serif;
+}
+
+.footer-contact {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.contact-item {
+  color: #ffcc00;
+  font-size: 1rem;
+  font-family: 'Roboto Slab', serif;
+  min-width: 150px;
+  text-align: center;
+}
+
+.contact-item strong {
+  color: #ccc;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-item a {
+  color: #ffcc00;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* Instagram specific styles */
+.instagram-logo {
+  width: 20px;
+  height: 20px;
+  filter: invert(86%) sepia(64%) saturate(645%) hue-rotate(355deg) brightness(93%) contrast(97%);
+  /* This filter gives the icon a golden-ish color matching your palette */
+}
+
+
+/* ========== Hamburger Menu ========== */
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: #ffcc00;
+  cursor: pointer;
+  z-index: 11;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav#primary-navigation {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    width: 200px;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    display: none;
+  }
+
+  nav#primary-navigation a {
+    display: block;
+    margin: 15px 0;
+  }
+
+  nav#primary-navigation.show {
+    display: flex;
+  }
+
+  .hero .glass-card {
+    margin: 0 16px;
+  }
+
+  .testimonial-wrapper {
+    padding: 20px 40px;
+  }
+}

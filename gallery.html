@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NovaDetail | Gallery</title>
+
+  <link rel="preload" as="image" href="images/pexels-garvin-st-villier-719266-9452107.jpg" />
+  <link rel="preload" as="image" href="images/pexels-zenzazione-2922142.jpg" />
+  <link rel="preload" as="image" href="images/pexels-pixabay-326259.jpg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gallery.css" />
+   <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background"></div>
+  <header class="nav">
+    <h1 class="logo">NovaDetail</h1>
+    <button class="hamburger" aria-label="Menu">&#9776;</button>
+    <nav id="primary-navigation">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#about">About</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="gallery" class="section">
+    <h2>Gallery: Before & After</h2>
+
+    <!-- Before/After Toggle Grid -->
+    <div class="before-after-grid">
+      <div class="before-after-toggle">
+        <button class="before-btn">Before</button>
+        <img src="images/pexels-andreevaleksandar-25189129.jpg" alt="Before 1">
+        <img src="images/pexels-pixabay-326259.jpg" alt="After 1" class="after">
+        <button class="toggle-btn after-btn">After</button>
+      </div>
+
+      <div class="before-after-toggle">
+        <button class="before-btn">Before</button>
+        <img src="images/pexels-andreevaleksandar-25189129.jpg" alt="Before 2">
+        <img src="images/pexels-pixabay-326259.jpg" alt="After 2" class="after">
+        <button class="toggle-btn after-btn">After</button>
+      </div>
+
+      <div class="before-after-toggle">
+        <button class="before-btn">Before</button>
+        <img src="images/pexels-andreevaleksandar-25189129.jpg" alt="Before 3">
+        <img src="images/pexels-pixabay-326259.jpg" alt="After 3" class="after">
+        <button class="toggle-btn after-btn">After</button>
+      </div>
+
+      <div class="before-after-toggle">
+        <button class="before-btn">Before</button>
+        <img src="images/pexels-andreevaleksandar-25189129.jpg" alt="Before 4">
+        <img src="images/pexels-pixabay-326259.jpg" alt="After 4" class="after">
+        <button class="toggle-btn after-btn">After</button>
+      </div>
+
+      <div class="before-after-toggle">
+        <button class="before-btn">Before</button>
+        <img src="images/pexels-andreevaleksandar-25189129.jpg" alt="Before 5">
+        <img src="images/pexels-pixabay-326259.jpg" alt="After 5" class="after">
+        <button class="toggle-btn after-btn">After</button>
+      </div>
+
+      <div class="before-after-toggle">
+        <button class="before-btn">Before</button>
+        <img src="images/pexels-andreevaleksandar-25189129.jpg" alt="Before 6">
+        <img src="images/pexels-pixabay-326259.jpg" alt="After 6" class="after">
+        <button class="toggle-btn after-btn">After</button>
+      </div>
+    </div>
+
+    <h2 class="more-pictures-text">More Pictures:</h2>
+    <!-- Auto-Scrolling Row -->
+    <div class="auto-scroll-row">
+      <div class="auto-scroll-track" id="scrollTrack">
+        <div class="scroll-card"><img src="images/pexels-garvin-st-villier-719266-9452107.jpg" alt="Scroll 1"></div>
+        <div class="scroll-card"><img src="images/pexels-zenzazione-2922142.jpg" alt="Scroll 2"></div>
+        <div class="scroll-card"><img src="images/pexels-garvin-st-villier-719266-9452107.jpg" alt="Scroll 3"></div>
+        <div class="scroll-card"><img src="images/pexels-pixabay-326259.jpg" alt="Scroll 4"></div>
+        <div class="scroll-card"><img src="images/pexels-garvin-st-villier-719266-9452107.jpg" alt="Scroll 5"></div>
+        <div class="scroll-card"><img src="images/pexels-zenzazione-2922142.jpg" alt="Scroll 6"></div>
+      </div>
+    </div>
+
+    <div class="auto-scroll-row">
+      <div class="auto-scroll-track scroll-right" id="scrollTrackRight">
+        <!-- Original images -->
+        <div class="scroll-card"><img src="images/pexels-garvin-st-villier-719266-9452107.jpg" alt="Scroll 1"></div>
+        <div class="scroll-card"><img src="images/pexels-zenzazione-2922142.jpg" alt="Scroll 2"></div>
+        <div class="scroll-card"><img src="images/pexels-garvin-st-villier-719266-9452107.jpg" alt="Scroll 3"></div>
+        <div class="scroll-card"><img src="images/pexels-pixabay-326259.jpg" alt="Scroll 4"></div>
+        <div class="scroll-card"><img src="images/pexels-garvin-st-villier-719266-9452107.jpg" alt="Scroll 5"></div>
+        <div class="scroll-card"><img src="images/pexels-zenzazione-2922142.jpg" alt="Scroll 6"></div>
+
+        <!-- Duplicate images for smooth loop -->
+        <div class="scroll-card"><img src="images/pexels-garvin-st-villier-719266-9452107.jpg" alt="Scroll 1"></div>
+        <div class="scroll-card"><img src="images/pexels-zenzazione-2922142.jpg" alt="Scroll 2"></div>
+        <div class="scroll-card"><img src="images/pexels-garvin-st-villier-719266-9452107.jpg" alt="Scroll 3"></div>
+        <div class="scroll-card"><img src="images/pexels-pixabay-326259.jpg" alt="Scroll 4"></div>
+        <div class="scroll-card"><img src="images/pexels-garvin-st-villier-719266-9452107.jpg" alt="Scroll 5"></div>
+        <div class="scroll-card"><img src="images/pexels-zenzazione-2922142.jpg" alt="Scroll 6"></div>
+      </div>
+    </div>
+    
+  </section>
+
+<footer>
+  <div class="footer-contact">
+    <div class="contact-item">
+      <strong>Email:</strong><br />
+      <a href="mailto:info@novadetail.com">info@novadetail.com</a>
+    </div>
+    <div class="contact-item">
+      <strong>Phone:</strong><br />
+      <a href="tel:+1234567890">+1 (234) 567-890</a>
+    </div>
+    <div class="contact-item">
+      <strong>Location:</strong><br />
+      Barrie, ON
+    </div>
+    <div class="contact-item instagram">
+      <strong>Instagram:</strong><br />
+      <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+        <img src="images/21.avif" alt="Instagram Logo" class="instagram-logo" />
+        @instagram
+      </a>
+    </div>
+  </div>
+  <p>&copy; 2025 NovaDetail. All rights reserved.</p>
+</footer>
+
+
+  <script src="gallery.js"></script>  
+</body>
+</html>
