@@ -460,8 +460,12 @@ footer {
 @media (max-width: 768px) {
   /* Center logo, keep hamburger right, keep nav links as is */
   .nav {
-    justify-content: center;
-    position: relative;
+    position: fixed; /* ensure fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20; /* stay above content */
+    justify-content: center; /* your existing styles */
   }
 
   .hamburger {
