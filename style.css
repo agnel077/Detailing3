@@ -1,6 +1,12 @@
+/* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600;700&family=Roboto+Slab:wght@400;500&display=swap');
 
-/* ========== Reset & Base ========== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
@@ -14,6 +20,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Background Gradient */
 .background {
   position: fixed;
   inset: 0;
@@ -21,7 +28,7 @@ body {
   z-index: -2;
 }
 
-/* ========== Navigation ========== */
+/* Navigation */
 .nav {
   position: fixed;
   top: 0;
@@ -37,12 +44,17 @@ body {
 }
 
 .logo {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2rem;
-  color: #D4AF37;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  height: 80px;
+  display: inline-block;
+  /* No overflow:hidden; */
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+  transform: scale(2.5);
+  transform-origin: center center;
+  transition: transform 0.3s ease;
 }
 
 nav a {
@@ -57,16 +69,15 @@ nav a {
 
 nav a:hover {
   color: #D4AF37;
-  text-shadow: 0 0 0px #D4AF37;
 }
 
-/* ========== Hero Section ========== */
+/* Hero Section */
 .hero {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 100px;
+  padding-top: 140px; /* includes header offset */
   position: relative;
   background: linear-gradient(160deg, #111, #1e1e1e);
   overflow: hidden;
@@ -81,6 +92,7 @@ nav a:hover {
   pointer-events: none;
 }
 
+/* Glass Card Style */
 .glass-card {
   position: relative;
   z-index: 1;
@@ -91,9 +103,9 @@ nav a:hover {
   backdrop-filter: blur(20px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   text-align: center;
-  cursor: auto;
 }
 
+/* Headings */
 h2 {
   font-family: 'Exo 2', sans-serif;
   font-size: 2rem;
@@ -107,18 +119,20 @@ h3 {
   margin-bottom: 10px;
 }
 
+/* Paragraphs */
 p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: #ccc;
 }
 
-/* ========== Sections & Layout ========== */
+/* Sections */
 .section {
   padding: 100px 8% 80px;
   text-align: center;
 }
 
+/* Grid Layout */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -126,26 +140,34 @@ p {
   margin-top: 40px;
 }
 
+/* Service Options */
 .service-option {
   cursor: pointer;
 }
 
-/* Style the service list items */
+.service-option .price {
+  font-family: 'Exo 2', sans-serif;
+  color: #ffcc00;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-top: 20px;
+}
+
+/* Service List Styling */
 #services ul {
   list-style: none;
-  padding-left: 0;
   margin-top: 10px;
+  padding-left: 0;
 }
 
 #services li {
   position: relative;
-  padding-left: 20px; /* space for star */
+  padding-left: 20px;
   margin-bottom: 8px;
   font-size: 0.95rem;
   color: #ccc;
 }
 
-/* Gold star as bullet */
 #services li::before {
   content: '★';
   position: absolute;
@@ -155,24 +177,34 @@ p {
   font-size: 0.85rem;
 }
 
-/* Vehicle type dropdown styling */
+/* Vehicle Type Selectors */
 .vehicle-type-select {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 20px 0 30px;
+}
+
+.select-group {
   display: flex;
   align-items: center;
   gap: 12px;
-  flex-wrap: wrap;
+  min-width: 220px;
 }
 
-.vehicle-type-select label {
+.select-group label {
   font-family: 'Exo 2', sans-serif;
-  color: #ffcc00;
+  color: #ccc;
   font-weight: 800;
   font-size: 1.3rem;
-  letter-spacing: 0.5px;
+  white-space: nowrap;
+  min-width: 120px;
+  text-align: left;
 }
 
-#vehicleType {
+.select-group select {
+  flex-grow: 1;
   padding: 10px 16px;
   border-radius: 10px;
   border: 2px solid #D4AF37;
@@ -184,24 +216,28 @@ p {
   cursor: pointer;
   transition: border-color 0.3s ease, background-color 0.3s ease;
   outline: none;
+  text-align: left;
+  min-width: 0;
 }
 
-#vehicleType:hover,
-#vehicleType:focus {
+.select-group select:hover,
+.select-group select:focus {
   border-color: #ffcc00;
   background-color: #2c2c2c;
   color: #ccc;
 }
 
-.price {
-  margin-top: 15px;
-  font-family: 'Exo 2', sans-serif;
-  font-size: 1.9rem;
-  font-weight: 800;
-  color: #ffcc00;
+/* Disclaimer Text */
+.disclaimer {
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.1rem;
+  color: #ffcc00; 
+  font-style: italic;
+  margin-top: 0;
+  text-align: center;
 }
 
-/* ========== Buttons ========== */
+/* Buttons */
 .button-glow {
   display: inline-block;
   padding: 12px 28px;
@@ -214,6 +250,7 @@ p {
   box-shadow: 0 0 5px #ffcc0099;
   text-decoration: none;
   cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button-glow:hover {
@@ -221,13 +258,12 @@ p {
   box-shadow: none;
 }
 
-/* ========== Contact ========== */
+/* Contact Form */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 15px;
   margin-top: 20px;
-  cursor: auto;
 }
 
 .contact-form input,
@@ -246,7 +282,7 @@ p {
   color: #ccc;
 }
 
-/* ========== Thank You Popup ========== */
+/* Thank You Popup */
 #thankYouPopup {
   position: absolute;
   top: 50%;
@@ -275,8 +311,6 @@ p {
   content: "\2714";
   font-size: 1.5rem;
   margin-right: 10px;
-  display: inline-block;
-  vertical-align: middle;
 }
 
 .close-btn {
@@ -289,11 +323,9 @@ p {
   font-size: 1.6rem;
   font-weight: 700;
   cursor: pointer;
-  line-height: 1;
-  user-select: none;
 }
 
-/* ========== Testimonial ========== */
+/* Testimonials */
 #testimonials {
   padding: 60px 8% 80px;
   text-align: center;
@@ -316,22 +348,14 @@ p {
 .testimonial-track {
   display: flex;
   transition: transform 0.5s ease;
-  will-change: transform;
 }
 
 .testimonial {
-  box-sizing: border-box;
   padding: 20px;
   text-align: center;
-  background: none;
-  border-radius: 12px;
   color: #ccc;
   font-style: italic;
   min-height: 140px;
-}
-
-.testimonial p {
-  margin-bottom: 10px;
 }
 
 .testimonial h4 {
@@ -341,7 +365,6 @@ p {
   color: #ffcc00;
 }
 
-/* Arrows */
 .testimonial-nav {
   position: absolute;
   top: 50%;
@@ -354,7 +377,6 @@ p {
   z-index: 10;
   padding: 5px 12px;
   user-select: none;
-  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .testimonial-nav.left {
@@ -370,52 +392,15 @@ p {
   transform: translateY(-50%) scale(1.2);
 }
 
-/* ========== Contact Snippet ========== */
-.contact-snippet {
-  text-align: center;
-  padding: 20px 10px;
-}
-
-.contact-flex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-}
-
-.contact-item {
-  min-width: 150px;
-  color: #ffcc00;
-  font-family: 'Roboto Slab', serif;
-  font-size: 1rem;
-  text-align: center;
-}
-
-.contact-item strong {
-  color: #ccc;
-  font-family: 'Exo 2', sans-serif;
-  font-weight: 600;
-}
-
-.contact-item a {
-  color: #ffcc00;
-  text-decoration: none;
-  word-break: break-word;
-}
-
-.contact-item a:hover {
-  text-decoration: underline;
-}
-
-/* ========== Footer ========== */
+/* Footer */
 footer {
   text-align: center;
   padding: 40px 8%;
   color: #777;
   border-top: 5px solid rgba(212, 175, 55, 0.3);
-  font-size: 0.9rem;
   background: radial-gradient(circle at 30% 30%, #1a1a1a, #000);
   font-family: 'Roboto Slab', serif;
+  font-size: 0.9rem;
 }
 
 .footer-contact {
@@ -429,7 +414,6 @@ footer {
 .contact-item {
   color: #ffcc00;
   font-size: 1rem;
-  font-family: 'Roboto Slab', serif;
   min-width: 150px;
   text-align: center;
 }
@@ -454,16 +438,13 @@ footer {
   text-decoration: underline;
 }
 
-/* Instagram specific styles */
 .instagram-logo {
   width: 20px;
   height: 20px;
   filter: invert(86%) sepia(64%) saturate(645%) hue-rotate(355deg) brightness(93%) contrast(97%);
-  /* This filter gives the icon a golden-ish color matching your palette */
 }
 
-
-/* ========== Hamburger Menu ========== */
+/* Hamburger Menu */
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -474,9 +455,26 @@ footer {
   z-index: 11;
 }
 
-/* ========== Responsive ========== */
+/* Responsive */
 @media (max-width: 768px) {
+  /* Center logo, keep hamburger right, keep nav links as is */
+  .nav {
+    justify-content: center;
+    position: relative;
+  }
+
   .hamburger {
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block; /* ensure it's visible */
+  }
+
+  .logo {
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
     display: block;
   }
 
@@ -484,12 +482,12 @@ footer {
     position: absolute;
     top: 100%;
     right: 0;
-    background: rgba(0, 0, 0, 0.95);
+    background: #0d0d0d;
     flex-direction: column;
     width: 200px;
     padding: 20px;
     border-radius: 0 0 10px 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
     display: none;
   }
 
@@ -502,11 +500,46 @@ footer {
     display: flex;
   }
 
+  .vehicle-type-select {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .select-group {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .select-group label {
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  .select-group select {
+    width: 100%;
+    text-align: center;
+  }
+
   .hero .glass-card {
     margin: 0 16px;
   }
 
   .testimonial-wrapper {
     padding: 20px 40px;
+  }
+}
+
+@media (min-width: 769px) {
+  .vehicle-type-select {
+    justify-content: center;
+    margin: 40px;
+    padding-right: 50px;
+  }
+
+  .background {
+    background: radial-gradient(circle at 50% 20%, #1a1a1a, #000);
   }
 }

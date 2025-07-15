@@ -1,20 +1,29 @@
-// Fill message box when user clicks a service card
+// =====================
+// Fill message box on service card click
+// =====================
 const serviceCards = document.querySelectorAll('.service-option');
 const messageBox = document.getElementById('message');
 const contactSection = document.getElementById('contact');
+const vehicleSelect = document.getElementById('vehicleType');
+const conditionSelect = document.getElementById('conditionLevel');
 
 serviceCards.forEach(card => {
   card.addEventListener('click', () => {
     const service = card.getAttribute('data-service');
+    const vehicle = vehicleSelect.options[vehicleSelect.selectedIndex].text;
+    const condition = conditionSelect.options[conditionSelect.selectedIndex].text;
+
     if (messageBox && contactSection) {
-      messageBox.value = `Hi Nova, I am interested in ${service}.`;
+      messageBox.value = `Hi, I am interested in ${service} for my ${vehicle} -${condition} condition.`;
       messageBox.focus();
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   });
 });
 
+// =====================
 // Close announcement box
+// =====================
 const announcementBox = document.getElementById('announcementBox');
 const closeBtn = document.getElementById('closeAnnouncement');
 
@@ -24,7 +33,9 @@ if (closeBtn && announcementBox) {
   });
 }
 
+// =====================
 // Show thank you popup on form submit
+// =====================
 const contactForm = document.querySelector('.contact-form');
 const thankYouPopup = document.getElementById('thankYouPopup');
 
@@ -39,24 +50,26 @@ if (contactForm && thankYouPopup) {
   });
 }
 
+// =====================
 // Hamburger menu toggle
+// =====================
 const hamburger = document.querySelector('.hamburger');
 const nav = document.getElementById('primary-navigation');
 
 if (hamburger && nav) {
   hamburger.addEventListener('click', () => {
     nav.classList.toggle('show');
+    hamburger.classList.toggle('active'); // animate bars
   });
 
-  // Auto-close menu when a nav link is clicked (good for mobile UX)
   nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
-      if (nav.classList.contains('show')) {
-        nav.classList.remove('show');
-      }
+      nav.classList.remove('show');
+      hamburger.classList.remove('active');
     });
   });
 }
+
 
 // =====================
 // Testimonial carousel
@@ -76,10 +89,8 @@ function updateTestimonialSlider() {
   const perView = slidesPerView();
   const total = testimonials.length;
 
-  // Set width of track dynamically so it fits all testimonials inline
   track.style.width = `${(total / perView) * 100}%`;
 
-  // Set width of each testimonial so exactly 'perView' fit container width
   testimonials.forEach(testimonial => {
     testimonial.style.width = `${100 / totalSlides()}%`;
   });
@@ -104,7 +115,7 @@ if (leftBtn) leftBtn.addEventListener('click', prevSlide);
 if (rightBtn) rightBtn.addEventListener('click', nextSlide);
 
 window.addEventListener('resize', () => {
-  currentSlide = 0; // reset on resize
+  currentSlide = 0;
   updateTestimonialSlider();
 });
 
@@ -138,44 +149,55 @@ setInterval(nextSlide, 5000);
 })();
 
 // =====================
-// Vehicle Type Pricing
+// Vehicle Type Pricing with Condition Ranges
 // =====================
-const vehiclePrices = {
-  sedan: {
-    "Interior Detailing": 110,
-    "Exterior Wash": 90
-  },
-  coupe: {
-    "Interior Detailing": 100,
-    "Exterior Wash": 80
-  },
-  suv: {
-    "Interior Detailing": 130,
-    "Exterior Wash": 100
-  },
-  pickup: {
-    "Interior Detailing": 150,
-    "Exterior Wash": 120
-  }
-};
+document.addEventListener('DOMContentLoaded', () => {
+  const vehicleSelect = document.getElementById('vehicleType');
+  const serviceCards = document.querySelectorAll('.service-option');
 
-const vehicleTypeSelect = document.getElementById('vehicleType');
-
-function updateServicePrices() {
-  if (!vehicleTypeSelect) return;
-  const selectedType = vehicleTypeSelect.value;
-  const cards = document.querySelectorAll('.service-option');
-
-  cards.forEach(card => {
-    const service = card.getAttribute('data-service');
-    const priceSpan = card.querySelector('.price-value');
-    if (vehiclePrices[selectedType]?.[service]) {
-      priceSpan.textContent = vehiclePrices[selectedType][service];
+  const vehiclePrices = {
+    sedan: {
+      "Interior Detailing": 100,
+      "Interior + Exterior Wash": 160
+    },
+    suv2: {
+      "Interior Detailing": 110,
+      "Interior + Exterior Wash": 150
+    },
+    suv: {
+      "Interior Detailing": 120,
+      "Interior + Exterior Wash": 160
+    },
+    pickup: {
+      "Interior Detailing": 150,
+      "Interior + Exterior Wash": 200
     }
-  });
-}
+  };
 
-if (vehicleTypeSelect) {
-  vehicleTypeSelect.addEventListener('change', updateServicePrices);
-  document.addEventListener('DOMContentLoaded', updateServicePrices);
-}
+  function updatePrices() {
+    const vehicle = vehicleSelect?.value;
+
+    serviceCards.forEach(card => {
+      const service = card.getAttribute('data-service');
+      const priceSpan = card.querySelector('.price-value');
+
+      if (
+        vehicle &&
+        vehiclePrices[vehicle] &&
+        vehiclePrices[vehicle][service] &&
+        priceSpan
+      ) {
+        const basePrice = vehiclePrices[vehicle][service];
+        const maxPrice = Math.round(basePrice * 1.4);
+        priceSpan.textContent = `${basePrice} – ${maxPrice}`;
+      } else if (priceSpan) {
+        priceSpan.textContent = '–';
+      }
+    });
+  }
+
+  vehicleSelect?.addEventListener('change', updatePrices);
+  updatePrices(); // Run once on load
+});
+
+

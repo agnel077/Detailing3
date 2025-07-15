@@ -11,6 +11,7 @@ body {
   color: #ccc;
   background: #0d0d0d;
   overflow-x: hidden;
+  padding-top: 140px;
 }
 
 .background {
@@ -206,6 +207,9 @@ h2 {
 @media (max-width: 768px) {
   .hamburger {
     display: block;
+  }
+    body {
+    padding-top: 10px;
   }
 
   nav#primary-navigation {

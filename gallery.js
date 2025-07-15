@@ -1,16 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // ==========================
-  // Hamburger menu toggle
-  // ==========================
-  const hamburger = document.querySelector('.hamburger');
-  const nav = document.getElementById('primary-navigation');
+// =====================
+// Hamburger menu toggle
+// =====================
+const hamburger = document.querySelector('.hamburger');
+const nav = document.getElementById('primary-navigation');
 
-  if (hamburger && nav) {
-    hamburger.addEventListener('click', () => {
-      nav.classList.toggle('show');
+if (hamburger && nav) {
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('show');
+    hamburger.classList.toggle('active'); // animate bars
+  });
+
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('show');
+      hamburger.classList.remove('active');
     });
-  }
-
+  });
+}
   // ==========================
   // Auto-scroll controls
   // ==========================
