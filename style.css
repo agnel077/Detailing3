@@ -540,6 +540,14 @@ footer {
   .testimonial-wrapper {
     padding: 20px 40px;
   }
+
+    #about {
+    scroll-margin-top: 30px; /* Mobile only padding */
+  }
+
+  #contact {
+    scroll-margin-top: 30px; /* Mobile only padding */
+  }
 }
 @media (min-width: 769px) {
   .vehicle-type-select {
