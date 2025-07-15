@@ -526,7 +526,7 @@ footer {
 
   /* --- HERE: Adjust hero padding-top to fix spacing on mobile --- */
   .hero {
-    padding-top: 30px;
+    padding-top: 70px;
   }
 
   .hero .glass-card {
