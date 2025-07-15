@@ -3,7 +3,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 50px;
+  scroll-padding-top: 10px;
 }
 
 /* Reset & Base */
