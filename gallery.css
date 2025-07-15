@@ -234,3 +234,10 @@ h2 {
     display: flex;
   }
 }
+
+@media (min-width: 769px) {
+  .section {
+    padding-top: 60px; /* reduced padding only on desktop */
+  }
+}
+
