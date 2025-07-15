@@ -455,6 +455,7 @@ footer {
   z-index: 11;
 }
 
+
 /* Responsive */
 @media (max-width: 768px) {
   /* Center logo, keep hamburger right, keep nav links as is */
@@ -523,6 +524,11 @@ footer {
     text-align: center;
   }
 
+  /* --- HERE: Adjust hero padding-top to fix spacing on mobile --- */
+  .hero {
+    padding-top: 90px;
+  }
+
   .hero .glass-card {
     margin: 0 16px;
   }
@@ -531,7 +537,6 @@ footer {
     padding: 20px 40px;
   }
 }
-
 @media (min-width: 769px) {
   .vehicle-type-select {
     justify-content: center;
